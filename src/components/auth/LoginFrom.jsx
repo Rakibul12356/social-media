@@ -1,8 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import Field from '../../common/Field';
+import Field from '../common/Field';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 const LoginFrom = () => {
+    const navigate =useNavigate()
+    const {setAuth}=useAuth()
     const {
         register,
         handleSubmit,
@@ -10,10 +14,14 @@ const LoginFrom = () => {
     }=useForm()
     const submitForm=(formData)=>{
         console.log(formData)
+        
+    const user = {...formData};
+    setAuth({user});
+    navigate("/");
     }
     return (
         <form className="border-b border-[#3F3F3F] pb-10 lg:pb-[60px]" onSubmit={handleSubmit(submitForm)}>
-            <Field label="Email ">
+            <Field label="Email " error={errors.email}>
                 <input
                 {...register("email",{required:"Email Id is Required"})}  
                 className={`auth-input ${
@@ -23,9 +31,9 @@ const LoginFrom = () => {
                 id='email'
                 type="email" />
             </Field>
-             <Field label="Password ">
+             <Field label="Password" error={errors.password}>
                 <input
-                {...register("email",{required:"Password is Required",
+                {...register("password",{required:"Password is Required",
                     minLength:{
                          value:8,
                          message:"Your password must be at least 8 characters long"

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import NavBar from '../../components/Navbar/NavBar';
+import { useAuth } from '../../hooks/useAuth';
 
 const Home = () => {
+    const {auth}=useAuth();
+    console.log(auth)
     return (
         <div>
-            <NavBar/>
-            <Outlet/>
+         
+          
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import loginImg from "../../assets/images/auth_illustration.png"
 import { Link } from 'react-router-dom';
-import LoginFrom from '../../components/Navbar/auth/LoginFrom';
+import LoginFrom from '../../components/auth/LoginFrom';
 const Login = () => {
     return (
         <>
