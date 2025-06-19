@@ -12,8 +12,7 @@ const NavBar = () => {
   const firstName= auth?.user?.firstName
   const lastName= auth?.user?.lastName
   const name = firstName +" "+ lastName
-  const profileIcon = auth?.user?.avatar
-  console.log(profileIcon)
+  
 
 
 
