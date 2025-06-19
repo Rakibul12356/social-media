@@ -10,7 +10,7 @@ const PrivateRoutes = () => {
     return (
         <>
             {
-                auth.user ? (
+                auth.authToken? (
                     <>
                         <ProfileProviders>
                             <NavBar />

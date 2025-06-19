@@ -1,39 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useAxios from '../../hooks/useAxios';
 import { useAuth } from '../../hooks/useAuth';
 import editIcon from "../../assets/icons/edit.svg"
 import avatarIcon from "../../assets/images/avatars/avatar_1.png"
+import {useProfile} from '../../hooks/useProfile';
+import { actions } from '../../actions';
 const Profile = () => {
-    const [user, setUser] = useState(null);
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null)
+   const {state,dispatch}=useProfile()
     const { api } = useAxios();
     const { auth } = useAuth();
     useEffect(() => {
+        dispatch({type: actions.profile.DATA_FETCHING})
         const fetchProfile = async () => {
             try {
                 const response = await api.get(`${import.meta.env.VITE_SERVER_BASE_URL}/profile/${auth?.user?.id}`)
-                setUser(response.data.user);
-                setPosts(response.data.posts);
+               if (response.status === 200) {
+                dispatch({type: actions.profile.DATA_FETCHED, data: response.data})
+                // console.log(response.data)
+               }
 
             } catch (error) {
                 console.error(error)
-            } finally {
-                setLoading(false)
-            }
+                 dispatch({type: actions.profile.DATA_FETCH_ERROR,error:error})
+            } 
         }
         fetchProfile()
     }, []);
   
-    const info = auth?.user;
-
-    const firstName = info.firstName;
-    const lastName = info.lastName;
-    const name = firstName + " " + lastName;
-
-
-    if (loading) {
+const name=state.user?.firstName + " "+state?.user?.lastName 
+    if ( state.loading) {
         return <div>Fetching your Profile data ...</div>
     }
     return (
@@ -41,37 +36,37 @@ const Profile = () => {
         <div>
             
         </div>
-            <div class="flex flex-col items-center py-8 text-center">
+            <div className="flex flex-col items-center py-8 text-center">
                 {/**<!-- profile image -->*/}
                 <div
-                    class="relative mb-8 max-h-[180px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]" >
+                    className="relative mb-8 max-h-[180px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]" >
                     <img
-                        class="max-w-full"
+                        className="max-w-full"
                         src={avatarIcon}
                         alt="sumit saha" />
                     <button
-                        class="flex-center absolute bottom-4 right-4 h-7 w-7 rounded-full bg-black/50 hover:bg-black/80" >
+                        className="flex-center absolute bottom-4 right-4 h-7 w-7 rounded-full bg-black/50 hover:bg-black/80" >
                         <img src={editIcon} alt="Edit" />
                     </button>
                 </div>
                 {/** <!-- name , email --> */}
                 <div>
-                    <h3 class="text-2xl font-semibold text-white lg:text-[28px]">
-                        {name}
+                    <h3 className="text-2xl font-semibold text-white lg:text-[28px]">
+                        {name|| "Your Name"}
                     </h3>
-                    <p class="leading-[231%] lg:text-lg">{info.email}</p>
+                    <p className="leading-[231%] lg:text-lg">{state?.user?.email}</p>
                 </div>
                 {/**<!-- bio --> */}
-                <div class="mt-4 flex items-start gap-2 lg:mt-6">
-                    <div class="flex-1">
-                        <p class="leading-[188%] text-gray-400 lg:text-lg">{info.bio}</p>
+                <div className="mt-4 flex items-start gap-2 lg:mt-6">
+                    <div className="flex-1">
+                        <p className="leading-[188%] text-gray-400 lg:text-lg">{state?.user?.bio}</p>
                     </div>
                     {/** <!-- Edit Bio button. The Above bio will be editable when clicking on the button --> */}
-                    <button class="flex-center h-7 w-7 rounded-full">
+                    <button className="flex-center h-7 w-7 rounded-full">
                         <img src={editIcon} alt="Edit" />
                     </button>
                 </div>
-                <div class="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
+                <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
             </div></>
     );
 };
