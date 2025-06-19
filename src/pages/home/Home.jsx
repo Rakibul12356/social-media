@@ -6,7 +6,7 @@ const Home = () => {
     console.log(auth)
     return (
         <div>
-         
+         this is home
           
         </div>
     );
