@@ -2,9 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../assets/icons/home.svg'
 import notificationIcon from '../../assets/icons/notification.svg'
+import avaterIcon from "../../assets/images/avatars/avatar_1.png"
 
 import Logout from '../auth/Logout';
+import { useAuth } from '../../hooks/useAuth';
 const NavBar = () => {
+  const {auth}=useAuth();
+  console.log(auth.user)
+  const firstName= auth?.user?.firstName
+  const lastName= auth?.user?.lastName
+  const name = firstName +" "+ lastName
+  const profileIcon = auth?.user?.avatar
+  console.log(profileIcon)
+
+
+
     return (
         <>
         <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
@@ -24,11 +36,12 @@ const NavBar = () => {
         </button>
        <Logout/>
 
+       <Link to="/me">
         <button className="flex-center !ml-8 gap-3">
-          <span className="text-lg font-medium lg:text-xl">Sumit</span>
+          <span className="text-lg font-medium lg:text-xl">{name}</span>
           <img className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
-            src="./assets/images/avatars/avatar_1.png" alt="" />
-        </button>
+            src={avaterIcon} alt="" />
+        </button></Link>
       </div>
  
     </div>
