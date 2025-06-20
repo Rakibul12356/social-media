@@ -30,7 +30,7 @@ const LoginFrom = () => {
             console.log(error)
             setError("root.random",{
                 type:"random",
-            message:`User with emai ${formData.email} is not found`}
+            message:`User with email ${formData.email} is not found`}
             )
         }
 
