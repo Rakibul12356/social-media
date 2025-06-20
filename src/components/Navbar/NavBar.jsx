@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../assets/icons/home.svg'
 import notificationIcon from '../../assets/icons/notification.svg'
-import avaterIcon from "../../assets/images/avatars/avatar_1.png"
+
 
 import Logout from '../auth/Logout';
 import { useAuth } from '../../hooks/useAuth';
