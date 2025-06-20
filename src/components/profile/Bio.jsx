@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit.svg"
 import cheackIcon from "../../assets/icons/check.svg"
 import useAxios from '../../hooks/useAxios';
 import { actions } from '../../actions';
-import { data } from 'autoprefixer';
+
 
 const Bio = () => {
     const { api } = useAxios()
