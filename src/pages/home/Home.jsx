@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import  { useEffect, useReducer } from "react";
 import { actions } from "../../actions/index.js";
 import PostList from "../../components/posts/PostList";
 import { initialState, postReducer } from "../../reducers/postReducer";

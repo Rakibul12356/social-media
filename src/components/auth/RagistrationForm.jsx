@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import axios from "axios";
 
@@ -43,7 +43,7 @@ const {
                         required: "First Name is Required",
                     })}
                     className={`auth-input ${
-                        !!errors.firstName
+                        errors.firstName
                             ? "border-red-500"
                             : "border-gray-200"
                     }`}
@@ -56,7 +56,7 @@ const {
                 <input
                     {...register("lastName")}
                     className={`auth-input ${
-                        !!errors.lastName ? "border-red-500" : "border-gray-200"
+                        errors.lastName ? "border-red-500" : "border-gray-200"
                     }`}
                     type="lastName"
                     name="lastName"
@@ -67,7 +67,7 @@ const {
                 <input
                     {...register("email", { required: "Email ID is Required" })}
                     className={`auth-input ${
-                        !!errors.email ? "border-red-500" : "border-gray-200"
+                        errors.email ? "border-red-500" : "border-gray-200"
                     }`}
                     type="email"
                     name="email"
@@ -86,7 +86,7 @@ const {
                         },
                     })}
                     className={`auth-input ${
-                        !!errors.password ? "border-red-500" : "border-gray-200"
+                        errors.password ? "border-red-500" : "border-gray-200"
                     }`}
                     type="password"
                     name="password"
