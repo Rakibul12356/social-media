@@ -24,10 +24,10 @@ console.log(user)
           </div>
 
           <div className="flex items-center space-x-4">
-            <a href="./index.html" className="btn-primary">
+            <Link to="/" className="btn-primary">
               <img src={homeIcon} alt="Home" />
               Home
-            </a>
+            </Link>
             <button className="icon-btn">
               <img src={notificationIcon} alt="Notification" />
             </button>
