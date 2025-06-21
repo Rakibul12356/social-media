@@ -135,85 +135,6 @@
       "createAt": "2024-02-24T12:18:21.686Z"
     },
     {
-      "id": "ed30b734-af45-4fae-be50-8b1e7c8ee929",
-      "content": "Happy Birthday Tapas Vai",
-      "image": "uploads/posts/image-1708777190872-111445232.jpg",
-      "postType": "image",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-      },
-      "comments": [
-        {
-          "id": "a0e37f88-ffc7-4fc7-952e-81370ff96269",
-          "comment": "Happy Birthday vai",
-          "createdAt": "2024-02-24T12:36:38.047Z",
-          "author": {
-            "id": "ea168626-058e-49dd-b23c-3000e7bd0172",
-            "name": "Akash Ahmed",
-            "avatar": "uploads/avatar/akash.png"
-          }
-        },
-        {
-          "id": "a0e37f88-ffc7-4fc7-952e-81370ff96269",
-          "comment": "শুভ জন্মদিন ভাই",
-          "createdAt": "2024-02-24T12:36:38.047Z",
-          "author": {
-            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-            "name": "Saad Hasan",
-            "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-          }
-        },
-        {
-          "id": "a0e37f88-ffc7-4fc7-952e-81370ff96269",
-          "comment": "Many many happy returns of the day",
-          "createdAt": "2024-02-24T12:36:38.047Z",
-          "author": {
-            "id": "1aeef0f0-77ba-456b-8b5b-d4145a9b5410",
-            "name": "Sumit Saha",
-            "avatar": "uploads/avatar/avatar-1708777668890-622477379.png"
-          }
-        },
-        {
-          "id": "a0e37f88-ffc7-4fc7-952e-81370ff96269",
-          "comment": "সবাইকে অনেক অনেক ধন্যবাদ",
-          "createdAt": "2024-02-24T12:36:38.047Z",
-          "author": {
-            "id": "8fc0f0d6-396a-4ef4-922b-27ef5b4e8526",
-            "name": "Tapas Adhikary",
-            "avatar": "uploads/avatar/avatar-1708770640883-148182382.png"
-          }
-        },
-        {
-          "id": "093d2b40-099f-4d2d-8597-f09f47b87c95",
-          "comment": "Looks Great",
-          "createdAt": "2024-02-25T05:02:19.242Z",
-          "author": {
-            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-            "name": "Saad Hasan",
-            "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-          }
-        },
-        {
-          "id": "3a302cb1-4470-4790-a0be-86eafc5b2e16",
-          "comment": "Awesome Looking",
-          "createdAt": "2024-02-25T05:02:46.988Z",
-          "author": {
-            "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-            "name": "Saad Hasan",
-            "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-          }
-        }
-      ],
-      "likes": [
-        "ea168626-058e-49dd-b23c-3000e7bd0172",
-        "8fc0f0d6-396a-4ef4-922b-27ef5b4e8526",
-        "1aeef0f0-77ba-456b-8b5b-d4145a9b5410"
-      ],
-      "createAt": "2024-02-09T12:19:50.876Z"
-    },
-    {
       "id": "d17793ec-977b-4052-9903-9e4e39e6bf0f",
       "content": "The Three Musketeers don't often have the chance to capture moments together and spend time collectively. Finally, we've seized an opportunity and are on our way to Kishoreganj, enjoying some quality time together.",
       "image": "uploads/posts/image-1708777287639-896835049.jpg",
@@ -480,6 +401,20 @@
       "comments": [],
       "likes": [],
       "createAt": "2024-02-25T07:16:53.349Z"
+    },
+    {
+      "id": "da5e0d7e-988e-4f57-b780-58d0fef46198",
+      "content": "hello bangladesh",
+      "image": null,
+      "postType": "text",
+      "author": {
+        "id": "b8084873-1cec-4855-a9aa-c3c0f6361226",
+        "name": "Rakibul Hasan",
+        "avatar": "uploads/avatar/avatar-1750507209243-522831439.jpg"
+      },
+      "comments": [],
+      "likes": [],
+      "createAt": "2025-06-21T12:01:06.487Z"
     }
   ],
   "comments": [],
@@ -540,8 +475,9 @@
       "password": "$2b$08$L0o.tqaW/973aWTNuNKIIe1EnPZxhtxcXgimb6SzUba2qltD6.C46",
       "firstName": "Rakibul",
       "lastName": "Hasan",
-      "avatar": null,
-      "email": "mdrakibulhasan12346@gmail.com"
+      "avatar": "uploads/avatar/avatar-1750507209243-522831439.jpg",
+      "email": "mdrakibulhasan12346@gmail.com",
+      "bio": " Iam a jr web developer"
     }
   ]
 }
